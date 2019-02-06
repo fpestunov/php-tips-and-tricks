@@ -1,0 +1,25 @@
+html, body {
+    height: 100%;
+}
+ 
+body {
+    font-family: sans-serif;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    border: 1px solid #cecece;
+    padding: 20px;
+    min-height: 300px;
+    width: 100%;
+}
+
+.result {
+    margin-top: 50px;
+    color: #777777;
+}
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP & Ajax Example</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="box">   
+        <form id="myForm">
+            <p>This form send ajax request to PHP file. Handler validate request and send back <a href="http://php.net/manual/en/function.md5.php">md5</a> hash of a string.</p>
+            <input type="text" name="string" placeholder="Type some text...">
+            <input type="submit" value="Send">
+        </form>
+        <div id="result" class="result">
+        </div>
+    </div>
+
+<script>
+    $(document).ready(function () {
+        $('#myForm').submit(function(e){
+            e.preventDefault();
+            var formData = new FormData(this);
+ 
+            $.ajax({
+                type: 'POST',
+                url: 'handler.php',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    $('#result').text("MD5 hash of string: " + response.result);
+                },
+                error: function(response) {
+                    $('#result').text("Error occurred while processing request.");
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
