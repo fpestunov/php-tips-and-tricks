@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Avatar Upload</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="ajax.js"></script>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="row">
+        <div class="card" style="margin-top: 40px; width: 20rem;">
+          <h5 class="card-header">Profile</h5>
+          <div class="card-body">
+            <div class="image-preview">
+              <img id="preview" src="./images/user-480.png" class="img-thumbnail" alt="Profile image" width="80%">
+            </div>
+            </div>
+          <div class="card-body">
+            <form id="upload-image" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="image">Profile image:</label>
+                <input type="file" name="image" id="image">
+              </div>
+              <input type="submit" class="btn btn-primary" value="Change">
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div id="result" style="margin-top: 40px; width: 20rem;">
+          </div>
+      </div>
+
+    </div>
+  </body>
+</html>
